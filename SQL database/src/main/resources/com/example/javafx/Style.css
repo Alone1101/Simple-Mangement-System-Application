@@ -1,0 +1,18 @@
+.table-view {
+    -fx-padding: 0;
+    -fx-border-color: #008062;
+    -fx-border-radius: 8px;
+    -fx-border-width: 2px;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: #008062;
+}
+
+.table-view .column-header, .filter {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #fff;
+}

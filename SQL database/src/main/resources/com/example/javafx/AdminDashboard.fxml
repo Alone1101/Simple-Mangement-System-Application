@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.AdminDashboardController">
+   <children>
+      <AnchorPane fx:id="mainAnchorPane" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="438.0" layoutY="138.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="600.0" prefWidth="222.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutY="162.0" prefHeight="600.0" prefWidth="222.0" style="-fx-background-color: #008062;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="11.0" layoutY="14.0" prefHeight="87.0" prefWidth="222.0" style="-fx-background-color: #008062;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label layoutX="25.0" layoutY="23.0" text="7-11 Retail Store System" textFill="#fffdfd">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="52.0" layoutY="151.0" text="Welcome," textFill="#f8f6f6">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="usernameLabel" layoutX="124.0" layoutY="151.0" text="Adam" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="statisticsButton" layoutX="6.0" layoutY="206.0" mnemonicParsing="false" onAction="#statisticsButtonOnAction" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: f4811f;" text="Statistics" textFill="#fcf9f9">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="inventoryButton" layoutX="6.0" layoutY="260.0" mnemonicParsing="false" onAction="#inventoryButtonOnAction" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: f4811f;" text="Inventory" textFill="#fffdfd">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="signoutButton" layoutX="72.0" layoutY="541.0" mnemonicParsing="false" onAction="#signOutButtonOnAction" style="-fx-background-color: f4811f;" text="Sign Out" textFill="#f8f6f6" AnchorPane.bottomAnchor="28.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <ImageView fitHeight="63.0" fitWidth="72.0" layoutX="87.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@7-11.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="ordersTrackerButton" layoutX="6.0" layoutY="315.0" mnemonicParsing="false" onAction="#ordersTrackerButtonOnAction" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: f4811f;" text="Orders tracker" textFill="#fffdfd">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="statisticsAnchorPane" prefHeight="600.0" prefWidth="878.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="163.0" prefWidth="841.0" style="-fx-background-radius: 8; -fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <effect>
+                                    <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                 </effect>
+                                 <children>
+                                    <AnchorPane layoutX="24.0" layoutY="14.0" prefHeight="136.0" prefWidth="178.0" style="-fx-background-color: f4811f;">
+                                       <children>
+                                          <ImageView fitHeight="63.0" fitWidth="61.0" layoutX="14.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@user.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="57.0" layoutY="101.0" prefHeight="21.0" prefWidth="121.0" text="Number of User" textFill="#fffefe">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="numberOfUserLabel" alignment="CENTER_RIGHT" layoutX="78.0" layoutY="4.0" prefHeight="21.0" prefWidth="94.0" text="0" textFill="#fffefe">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="431.0" layoutY="14.0" prefHeight="136.0" prefWidth="178.0" style="-fx-background-color: f4811f;">
+                                       <children>
+                                          <ImageView fitHeight="63.0" fitWidth="61.0" layoutX="14.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@income.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="57.0" layoutY="101.0" prefHeight="21.0" prefWidth="121.0" text="Today's Income" textFill="#fffefe">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="todayIncomeLabel" alignment="CENTER_RIGHT" layoutX="78.0" layoutY="4.0" prefHeight="21.0" prefWidth="93.0" text="\$0.00" textFill="#fffefe">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="638.0" layoutY="14.0" prefHeight="136.0" prefWidth="178.0" style="-fx-background-color: f4811f;">
+                                       <children>
+                                          <ImageView fitHeight="63.0" fitWidth="61.0" layoutX="14.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@totalincome.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="75.0" layoutY="101.0" prefHeight="21.0" prefWidth="102.0" text="Total Income" textFill="#fffefe">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="totalIncomeLabel" alignment="CENTER_RIGHT" layoutX="78.0" layoutY="4.0" prefHeight="21.0" prefWidth="95.0" text="\$0.00" textFill="#fffefe">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="228.0" layoutY="14.0" prefHeight="136.0" prefWidth="178.0" style="-fx-background-color: f4811f;">
+                                       <children>
+                                          <ImageView fitHeight="63.0" fitWidth="61.0" layoutX="14.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@product.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="78.0" layoutY="101.0" prefHeight="21.0" prefWidth="99.0" text="Total Orders" textFill="#fffefe">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="totalOrdersLabel" alignment="CENTER_RIGHT" layoutX="78.0" layoutY="4.0" prefHeight="21.0" prefWidth="90.0" text="0" textFill="#fffefe">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="14.0" layoutY="194.0" prefHeight="391.0" prefWidth="850.0" style="-fx-background-radius: 8; -fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="194.0">
+                                 <effect>
+                                    <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                 </effect>
+                                 <children>
+                                    <AnchorPane layoutX="14.0" layoutY="15.0" prefHeight="362.0" prefWidth="488.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="348.0" AnchorPane.topAnchor="15.0">
+                                       <effect>
+                                          <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                       </effect>
+                                       <children>
+                                          <AreaChart fx:id="incomeAreaChart" layoutX="-6.0" layoutY="-19.0" prefHeight="362.0" prefWidth="458.0" title="Income Chart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </AreaChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="522.0" layoutY="15.0" prefHeight="362.0" prefWidth="314.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8;" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="15.0">
+                                       <effect>
+                                          <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                       </effect>
+                                       <children>
+                                          <BarChart fx:id="orderBarChart" layoutX="-93.0" layoutY="-19.0" prefHeight="381.0" prefWidth="407.0" title="User Chart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </BarChart>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="InventoryAnchorPane" layoutX="132.0" layoutY="142.0" prefHeight="600.0" prefWidth="878.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="15.0" layoutY="14.0" prefHeight="294.0" prefWidth="849.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8;" AnchorPane.bottomAnchor="292.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <effect>
+                                    <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                 </effect>
+                                 <children>
+                                    <TableView fx:id="inventoryTableView" layoutX="14.0" layoutY="14.0" onMouseClicked="#selectInventoryData" prefHeight="266.0" prefWidth="822.0" stylesheets="@Style.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="14.0">
+                                      <columns>
+                                        <TableColumn fx:id="ItemIDColumn" prefWidth="75.0" text="Item ID" />
+                                        <TableColumn fx:id="ItemNameColumn" prefWidth="102.0" text="Item Name" />
+                                          <TableColumn fx:id="TypeColumn" prefWidth="102.0" text="Type" />
+                                          <TableColumn fx:id="StockColumn" prefWidth="102.0" text="Stock" />
+                                          <TableColumn fx:id="PriceColumn" prefWidth="102.0" text="Price ($)" />
+                                          <TableColumn fx:id="AvailabilityColumn" prefWidth="102.0" text="Availability" />
+                                          <TableColumn fx:id="DateColumn" prefWidth="102.0" text="Date" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="15.0" layoutY="324.0" prefHeight="262.0" prefWidth="849.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0">
+                                 <effect>
+                                    <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                 </effect>
+                                 <children>
+                                    <Label layoutX="44.0" layoutY="25.0" text="Item ID:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="inventoryItemIDTextField" layoutX="102.0" layoutY="23.0" />
+                                    <TextField fx:id="inventoryItemNameTextField" layoutX="102.0" layoutY="74.0" />
+                                    <Label layoutX="19.0" layoutY="76.0" text="Item Name:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="58.0" layoutY="127.0" text="Type:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="inventoryTypeComboBox" layoutX="102.0" layoutY="125.0" prefWidth="150.0" promptText="Select type" />
+                                    <Label layoutX="312.0" layoutY="25.0" text="Stock:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="inventoryStockTextField" layoutX="361.0" layoutY="23.0" promptText="0" />
+                                    <TextField fx:id="inventoryPriceTextField" layoutX="361.0" layoutY="74.0" promptText="S0.00" />
+                                    <Label layoutX="316.0" layoutY="76.0" text="Price:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane layoutX="614.0" layoutY="15.0" prefHeight="168.0" prefWidth="141.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8;" AnchorPane.rightAnchor="94.0">
+                                       <effect>
+                                          <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                       </effect>
+                                       <children>
+                                          <ImageView fx:id="inventoryImageView" fitHeight="168.0" fitWidth="141.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Button fx:id="importButton" layoutX="642.0" layoutY="197.0" mnemonicParsing="false" onAction="#importButtonOnAction" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: f4811f;" text="Import" textFill="#fffefe" AnchorPane.rightAnchor="121.0">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="addButton" layoutX="50.0" layoutY="189.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="45.0" prefWidth="103.0" style="-fx-background-color: f4811f;" text="Add" textFill="#fcfafa" AnchorPane.bottomAnchor="27.666666666666657">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="updateButton" layoutX="177.0" layoutY="189.0" mnemonicParsing="false" onAction="#updateButtonOnAction" prefHeight="45.0" prefWidth="103.0" style="-fx-background-color: f4811f;" text="Update" textFill="#f2efef" AnchorPane.bottomAnchor="27.666666666666657">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="clearButton" layoutX="424.0" layoutY="190.0" mnemonicParsing="false" onAction="#clearButtonOnAction" prefHeight="45.0" prefWidth="103.0" style="-fx-background-color: f4811f;" text="Clear" textFill="#fffdfd" AnchorPane.bottomAnchor="26.666666666666657">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="deleteButton" layoutX="303.0" layoutY="190.0" mnemonicParsing="false" onAction="#deleteButtonOnAction" prefHeight="45.0" prefWidth="103.0" style="-fx-background-color: f4811f;" text="Delete" textFill="#fffdfd" AnchorPane.bottomAnchor="26.666666666666657">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <ComboBox fx:id="inventoryAvailabilityComboBox" layoutX="361.0" layoutY="125.0" prefWidth="150.0" promptText="Select availability" />
+                                    <Label layoutX="280.0" layoutY="127.0" text="Availability:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="ordersTrackerAnchorPane" layoutX="300.0" layoutY="139.0" prefHeight="600.0" prefWidth="878.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="15.0" layoutY="14.0" prefHeight="571.0" prefWidth="848.0" style="-fx-background-radius: 8; -fx-background-color: #ffffff;">
+                                 <children>
+                                    <TableView fx:id="ordersTrackerTableView" layoutX="14.0" layoutY="15.0" onMouseClicked="#selectAddress" prefHeight="451.0" prefWidth="821.0" stylesheets="@Style.css">
+                                      <columns>
+                                        <TableColumn fx:id="orderUsernameColumn" prefWidth="75.0" text="UserName" />
+                                        <TableColumn fx:id="orderItemNameColumn" prefWidth="75.0" text="ItemName" />
+                                          <TableColumn fx:id="orderQuantityColumn" prefWidth="75.0" text="Quantity" />
+                                          <TableColumn fx:id="orderAddressColumn" prefWidth="75.0" text="Address" />
+                                          <TableColumn fx:id="orderIsDeliveredColumn" prefWidth="75.0" text="IsDelivered" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                    <Button fx:id="deliverButton" layoutX="319.0" layoutY="499.0" mnemonicParsing="false" onAction="#deliverButtonOnAction" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: f4811f;" text="Deliver" textFill="#fffdfd">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                                 <effect>
+                                    <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                 </effect>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
